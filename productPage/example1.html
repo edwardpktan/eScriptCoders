@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Page</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../css/example1.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>Product Name</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="product">
+			<img src="product-image.jpg" alt="Product Image">
+			<h2>Product Name</h2>
+			<p>Description of the product.</p>
+			<form action="add-to-cart.php" method="post">
+				<label for="quantity">Quantity:</label>
+				<input type="number" name="quantity" id="quantity" value="1" min="1" max="10">
+				<button type="submit">Add to Cart</button>
+			</form>
+		</section>
+		<aside class="related-products">
+			<h3>Related Products</h3>
+			<ul>
+				<li><a href="#">Product Name</a></li>
+				<li><a href="#">Product Name</a></li>
+				<li><a href="#">Product Name</a></li>
+			</ul>
+		</aside>
+	</main>
+	<footer>
+		<p>&copy; 2023 Company Name</p>
+	</footer>
+</body>
+</html>
