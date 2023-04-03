@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color: black;
+}
+section{
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.login {
+    width:400px;
+    height:500px;
+    padding: 50px;
+    border-radius: 16px;
+    background-color: blanchedalmond;
+}
+.login h1{
+    font-size: 36px;
+    margin-bottom: 25px;
+
+}
+.login form{
+    font-size: 20px;
+}
+.login form-group{
+    margin-bottom: 12px;
+
+}
+.login form input[type="submit"]{
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+
+/* @media screen and (max-width: 768px) {
+
+
+    /*Make the mobile NavBar appear and disable the main navbar*/
+    /* .mobileNavbar{
+        display: flex;
+    }
+
+    .mainNavbar{
+        display: none;
+    }
+
+    .navbarHr{
+
+        display:none;
+    }
+
+    .navbar-brand img{
+        display: none;
+    } */
