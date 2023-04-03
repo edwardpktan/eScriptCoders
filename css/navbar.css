@@ -1,0 +1,61 @@
+
+
+    .flexDirectionColumn{
+
+        flex-direction: column;
+    }
+
+
+    /*Make the mobile NavBar disappear at the start*/
+    .mobileNavbar{
+         display: none;
+    }
+
+    .navbarHr {
+        width:50%;
+        
+    }
+    .overwriteHeight{
+        /*I dont want my buttons to stretch when the burger menu is dropped down*/
+        height:38px!important;
+    }
+    .overwriteWidth{
+        /*control buttons width so that the box doesnt become so small that the text goes out of the border*/
+        width:82px!important;
+    }
+
+
+    .overwritePadTopBottom{
+        /*Remove padding top and bottom from Burger Menu*/
+        padding-top:0px!important; 
+        padding-bottom:0px!important;
+
+    }
+
+
+
+/*Start of media for responsive design*/
+
+@media screen and (max-width: 992px) {
+
+
+    /*Make the mobile NavBar appear and disable the main navbar*/
+    .mobileNavbar{
+        display: flex;
+    }
+
+    .mainNavbar{
+        display: none;
+    }
+
+    .navbarHr{
+
+        display:none;
+    }
+
+    .navbar-brand img{
+        display: none;
+    }
+    
+
+}/*End of media for responsive design*/
