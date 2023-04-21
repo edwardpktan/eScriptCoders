@@ -1,0 +1,10 @@
+/*.card {
+    max-width: 100%;
+    height: auto;
+}
+
+.col-sm-6,
+.col-md-6,
+.col-lg-4 {
+    transition: width 0.3s ease-in-out;
+}*/

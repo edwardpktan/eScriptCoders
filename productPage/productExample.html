@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <img src="https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0010_540x.jpg?v=1597282015" class="img-fluid">
+        <h1>Rodney Tie in Cream</h1>
+        <p class="lead">A classic solid necktie that complements any outfit.</p>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">$39.99</h5>
+                        <p class="card-text">Made from high-quality silk, this necktie is the perfect accessory for any
+                            formal or casual occasion. Add it to your collection today.</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="list-group mt-3">
+                    <h5 class="list-group-item list-group-item-action active">Product Details</h5>
+                    <a href="#" class="list-group-item list-group-item-action">Material: Silk</a>
+                    <a href="#" class="list-group-item list-group-item-action">Care Instructions: Dry Clean Only</a>
+                    <a href="#" class="list-group-item list-group-item-action">Shipping: Free Shipping Worldwide</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#details">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#related-products">Related Products</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active" id="details">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nisi vitae turpis tincidunt
+                            blandit a auctor mauris. Suspendisse ac est at dolor laoreet varius. Donec vitae pulvinar
+                            quam. Quisque blandit lectus et felis mollis, in molestie nulla aliquet. Mauris ac turpis
+                            nisi. Vestibulum suscipit velit vel venenatis accumsan. Suspendisse vel est eget nulla
+                            ultrices lacinia. </p>
+                    </div>
+                    <div class="tab-pane fade" id="reviews">
+                        <p>No reviews yet.</p>
+                    </div>
+                    <div class="tab-pane fade" id="related-products">
+                        <p>Coming soon.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="product-image-modal" tabindex="-1" role="dialog"
+        aria-labelledby="product-image-modal-label" aria-hidden="true"></div>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0010_512x512@2x.jpg?v=1597282015" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/core.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $('#product-image').click(function () {
+            $('#product-image-modal').modal('show');
+        });
+    </script>
+</body>
+
+</html>
