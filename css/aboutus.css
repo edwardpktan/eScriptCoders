@@ -24,6 +24,22 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+#aboutUsContainer {
+  border: 1px solid red;
+}
+.aboutUsCard {
+  border: 1px solid red;
+  max-width: 400px;
+  margin: 10px auto;
+}
+.aboutUsCard a {
+  border: 1px solid red;
+  margin: 10px 0;
+}
+
 /*
 .container { 
 border: 1px solid red;
