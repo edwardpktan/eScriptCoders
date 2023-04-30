@@ -1,113 +1,200 @@
 
-const necktie1 = { name: "Gold Necktie", description: "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0002_512x512@2x.jpg?v=1597282021", price: 69.00 };
-const necktie2 = { name: "Pink Necktie", description: "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0003_512x512@2x.jpg?v=1597282021", price: 69.00 };
-const necktie3 = { name: "Blue Necktie", description: "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0004_1080x.jpg?v=1597282020", price: 69.00 };
-const necktie4 = { name: "Black Necktie", description: "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0005_1080x.jpg?v=1597282019", price: 69.00 };
-const necktie5 = { name: "Maroon Necktie", description: "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0006_1080x.jpg?v=1597282018", price: 69.00 };
+// Start of Product List
+const productList = [];
 
-const neckties = [necktie1, necktie2, necktie3, necktie4, necktie5];
+const necktieColorList = ["Gold", "Pink", "Blue", "Black", "Maroon", "Red", "Silver", "Grey", "Cream", "Grey Skinny", "Silver Skinny", "Cream Skinny", "Purple Skinny", "Pink Skinny", "Red Skinny", "Maroon Skinny", "Black Skinny", "Blue Skinny"];
+const necktieColorIMGList = ["images/TRSL0002sq.jpg", "images/TRSL0003sq.jpg", "images/TRSL0004sq.jpg", "images/TRSL0005sq.jpg", "images/TRSL0006sq.jpg", "images/TRSL0007sq.jpg", "images/TRSL0008sq.jpg", "images/TRSL0009sq.jpg", "images/TRSL0010sq.jpg", "images/TSSL0001sq.jpg", "images/TSSL0002sq.jpg", "images/TSSL0003sq.jpg", "images/TSSL0004sq.jpg", "images/TSSL0005sq.jpg", "images/TSSL0006sq.jpg", "images/TSSL0007sq.jpg", "images/TSSL0008sq.jpg", "images/TSSL0009sq.jpg",];
 
-const bowTie1 = { name: "Blue Bow Tie", description: "Made in Singapore. Made of woven microfibre. Adjustable strap, hook fastening. Measurement: Bow 12x7cm Care instructions: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/BTPL0001_512x512@2x.jpg?v=1597281885", price: 39.00 };
-const bowTie2 = { name: "Silver Bow Tie", description: "Made in Singapore. Made of woven microfibre. Adjustable strap, hook fastening. Measurement: Bow 12x7cm Care instructions: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/BTPL0002_512x512@2x.jpg?v=1597281884", price: 39.00 };
-const bowTie3 = { name: "Black Bow Tie", description: "Made in Singapore. Made of woven microfibre. Adjustable strap, hook fastening. Measurement: Bow 12x7cm Care instructions: Dry cleaning recommended", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/BTPL0003_512x512@2x.jpg?v=1597281883", price: 39.00 };
+const bowTieColorList = ["Blue", "Silver", "Black"];
+const bowTieColorIMGList = ["images/BTPL0001sq.jpg", "images/BTPL0002sq.jpg", "images/BTPL0003sq.jpg"];
 
-const bowTies = [bowTie1, bowTie2, bowTie3];
+const tieTackColorList = ["Silver", "Pink", "Blue", "Silver Crystal", "Pink Crystal", "Blue Crystal"];
+const tieTackIMGList = ["images/TTAC0001sq.jpg", "images/TTAC0002sq.jpg", "images/TTAC0003sq.jpg", "images/TTAC0004sq.jpg", "images/TTAC0005sq.jpg", "images/TTAC0006sq.jpg"];
 
-const tieTack1 = { name: "Silver Crystal Tie Tack", description: "Made in Singapore. Crystal set in rhodium brass. Measurement: Diameter 1.1cm Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TTAC0005-2_512x512@2x.jpg?v=1597281963", price: 60.00 };
-const tieTack2 = { name: "Pink Crystal Tie Tack", description: "Made in Singapore. Crystal set in rhodium brass. Measurement: Diameter 1.1cm Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TTAC0006-2_512x512@2x.jpg?v=1597281962", price: 60.00 };
-const tieTack3 = { name: "Blue Crystal Tie Tack", description: "Made in Singapore. Crystal set in rhodium brass. Measurement: Diameter 1.1cm Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TTAC0004-2_512x512@2x.jpg?v=1597281964", price: 60.00 };
-const tieTack4 = { name: "Silver Crystal Impression Tie Tack", description: "Made in Singapore. Crystal set in rhodium brass. Measurement: Diameter 1.1cm Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TTAC0002-2_512x512@2x.jpg?v=1597281966", price: 60.00 };
-const tieTack5 = { name: "Pink Crystal Impression Tie Tack", description: "Made in Singapore. Crystal set in rhodium brass. Measurement: Diameter 1.1cm Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TTAC0003-2_512x512@2x.jpg?v=1597281965", price: 60.00 };
-const tieTack6 = { name: "Blue Crystal Impression Tie Tack", description: "Made in Singapore. Crystal set in rhodium brass. Measurement: Diameter 1.1cm Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TTAC0001-2_512x512@2x.jpg?v=1597281967", price: 60.00 };
+const cufflinksColorList = ["Mother of Pearl Square", "Black Onyx Square", "Mother of Pearl Rectangle", "Black Onyx Rectangle", "Mother of Pearl Hexagon", "Black Onyx Hexagon", "Clear Crystal Pavé Bezel", "Black Crystal Pavé Bezel", "Blue Crystal Pavé Bezel", "Pink Crystal Pavé Bezel", "Purple Crystal Pavé Bezel", "Clear Crystal Square", "Black Crystal Square"];
+const cufflinksIMGList = ["images/CUFF0001sq.jpg", "images/CUFF0002sq.jpg", "images/CUFF0003sq.jpg", "images/CUFF0004sq.jpg", "images/CUFF0019sq.jpg", "images/CUFF0018.jpg", "images/CUFF0023sq.jpg", "images/CUFF0022sq.jpg", "images/CUFF0025sq.jpg", "images/CUFF0023sq.jpg", "images/CUFF0026sq.jpg", "images/CUFF0024sq.jpg", "images/CUFF0028sq.jpg"];
 
-const tieTacks = [tieTack1, tieTack2, tieTack3, tieTack4, tieTack5, tieTack6];
+const categoryList = ["NeckTies", "Bow Ties", "Tie Tacks", "Cufflinks"];
+const categoryIDList = ["neckTies_id", "bowTies_id", "tieTacks_id", "cufflinks_id"];
 
-const cufflinks1 = { name: "Mother of Pearl Square Cufflinks", description: "Made in Singapore. Mother of pearl set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0001_512x512@2x.jpg?v=1597281960", price: 129.00 };
-const cufflinks2 = { name: "Black Onyx Square Cufflinks", description: "Made in Singapore. Onyx set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0002_512x512@2x.jpg?v=1597281959", price: 129.00 };
-const cufflinks3 = { name: "Mother of Pearl Rectangle Cufflinks", description: "Made in Singapore. Mother of pearl set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0003_512x512@2x.jpg?v=1597281958", price: 129.00 };
-const cufflinks4 = { name: "Black Onyx Rectangle Cufflinks", description: "Made in Singapore. Onyx set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0004_512x512@2x.jpg?v=1597281957", price: 129.00 };
-const cufflinks5 = { name: "Mother of Pearl Hexagon Cufflinks", description: "Made in Singapore. Mother of pearl set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0019_512x512@2x.jpg?v=1597281945", price: 129.00 };
-const cufflinks6 = { name: "Black Onyx Hexagon Cufflinks", description: "Made in Singapore. Onyx set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0018_512x512@2x.jpg?v=1597281946", price: 129.00 };
-const cufflinks7 = { name: "Clear Crystal Pavé Bezel Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0023_512x512@2x.jpg?v=1597281942", price: 129.00 };
-const cufflinks8 = { name: "Black Crystal Pavé Bezel Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0022_512x512@2x.jpg?v=1597281943", price: 129.00 };
-const cufflinks9 = { name: "Blue Crystal Pavé Bezel Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0025_512x512@2x.jpg?v=1597281941", price: 129.00 };
-const cufflinks10 = { name: "Pink Crystal Pavé Bezel Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0026_512x512@2x.jpg?v=1597281940", price: 129.00 };
-const cufflinks11 = { name: "Purple Crystal Pavé Bezel Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0024_512x512@2x.jpg?v=1597281941", price: 129.00 };
-const cufflinks12 = { name: "Clear Crystal Square Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0027_512x512@2x.jpg?v=1597281939", price: 129.00 };
-const cufflinks13 = { name: "Black Crystal Square Cufflinks", description: "Made in Singapore. Crystal set in rhodium plated brass. Each piece may differ sightly due to the natural origins of the shell/stone. Bullet-back cufflinks. Care instructions: Polish with dry cloth", imageURL: "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/CUFF0028_512x512@2x.jpg?v=1597281938", price: 129.00 };
+const noOfProduct = 11;
+const noOfProductPerPage = 10;
 
-const cufflinks = [cufflinks1, cufflinks2, cufflinks3, cufflinks4, cufflinks5, cufflinks6, cufflinks7, cufflinks8, cufflinks9, cufflinks10, cufflinks11, cufflinks12, cufflinks13];
+const createProductHtml = (filteredProductArray) => {
+    //div.innerHTML = ;
 
-// Combine all arrays into a single array
-let productList = neckties.concat(bowTies, tieTacks, cufflinks);
 
-// (3) Display all products when user launch the product.html page
+    let noOfPages = Math.floor(productList.length / noOfProductPerPage);
+    let lastPage = productList.length % noOfProductPerPage;
+    if (lastPage > 0) {
 
-const displayNeckties = () => {
+        noOfPages++;
+    }
+    //    console.log(`noOfPages : ${noOfPages}`);
+    //    console.log(`lastPage : ${lastPage}`);
 
     let display = "";
 
-    for (let i = 0; i < neckties.length; i++) {
+    for (let i = 0; i < filteredProductArray.length; i++) {
 
         display += `
         <div class="col-lg-3 col-md-3 col-sm-6 col-6">
             <div class="card img-fluid" style="width: 14rem;">
             <a href="productpage/product.html">
-                <img src=${neckties[i].imageURL} class="card-img-top" alt="image">
+                <img src=${filteredProductArray[i].imageURL} class="card-img-top" alt="image">
                     <div class="card-body">
-                        <h5 class="card-title">${neckties[i].name}</h5>
-                        <h6 class="card-title">$${neckties[i].price}</h6>
+                        <h5 class="card-title">${filteredProductArray[i].productName}</h5>
+                        <h6 class="card-title">$${filteredProductArray[i].price}</h6>
                     </div>
             </a>
             </div>
         </div>
         `
     }
-
     document.querySelector("#row").innerHTML = display;
 }
 
-fetch("product-template.html")
-    .then(response => response.text())
-    .then(template => {
-        const productPage = document.createElement("div");
-        productPage.innerHTML = template;
-        productPage.querySelector(".product-name").textContent = productName;
-        productPage.querySelector(".product-description").textContent = productDescription;
-        productPage.querySelector(".product-image").innerHTML = "<img src='" + productImageUrl + "' />";
-        document.body.appendChild(productPage);
+const filterProduct = (categoryID) => {
+    console.log("cat ID" + categoryID);
+    const filteredProductArray = productList.filter((product) => {
+        console.log("product.category.categoryID" + product.category.id);
+        return product.category.id == categoryID;
+
     });
-
-
-// 4) Add product to the product list when user clocks on the submit button from the productform.html
-const addProduct = (name, imageURL, description, price, quantity) => {
-
-    // The parameters will be sent in from another function
-    /* 
-    1) Contruct the object
-        property: value,
-    */
-    const productItem = {
-        name: name,
-        imageURL: imageURL,
-        description: description,
-        price: price,
-        quantity: quantity
-    }
-
-    neckties.push(productItem);
+    console.log("filter product" + filteredProductArray);
+    return filteredProductArray;
 
 }
 
-// Hardcorded now: The individual property value are sent in through the argument - later we need to refactor when you have the productform.html
+const filterProductSearchString = (searchStringArray) => {
 
-addProduct("Red Necktie", "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0007_1080x.jpg?v=1597282018", "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", 69);
+    let stringArray = [];
+    console.log("searchStringArray " + searchStringArray.length);
+    for (let i = 0; i < searchStringArray.length; i++) {
+        
+        
+        let searchString = searchStringArray[i];
+        console.log("search String " +searchString);
+        stringArray = stringArray.concat(filterProduct(searchString));
+        
 
-addProduct("Silver Necktie", "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0008_540x.jpg?v=1597282017", "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", 69);
+    }
+    return stringArray;
+}
 
-addProduct("Grey Necktie", "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0009_512x512@2x.jpg?v=1597282016", "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", 69);
+const initProductList = () => {
 
-addProduct("White Necktie", "https://cdn.shopify.com/s/files/1/0281/3493/2552/products/TRSL0010_540x.jpg?v=1597282015", "Made in Singapore. Made of 100% recycled microfibre. Measurement: Width 8cm, Length, 152cm Care instruction: Dry cleaning recommended", 69);
+    // setCategory("category", "bowTies_id");
+    let stringArray = ["bowTies_id", "neckTies_id"];
+    let stringA = JSON.stringify(stringArray);
 
-displayNeckties();
+    setCategory("searchStringArray", stringA);
 
+    for (let i = 0; i < noOfProduct; i++) {
+
+        createProduct(i);
+    }
+    console.log("get search" + getSearchStringArray());
+
+    if (getSearchStringArray() != null && getSearchStringArray() != "") {
+        createProductHtml(filterProductSearchString(getSearchStringArray()));
+    } else if (getCategory() != null && getCategory() != "") {
+        createProductHtml(filterProduct(getCategory()));
+    } else {
+        createProductHtml(productList);
+        console.log("I'm hereee");
+    }
+
+    console.log(productList);
+
+}
+
+const createProduct = (index) => {
+
+    let product = {};
+
+    let categoryIndex = Math.floor(Math.random() * categoryList.length);
+    // let categoryIndex = 0;
+    let categoryName = categoryList[categoryIndex]; // change this if you need to hard code the category
+    let categoryID = categoryIDList[categoryIndex];
+    let category = {};
+    category.display = categoryName;
+    category.id = categoryID;
+
+    let randIndex = 0;
+    let color = "";
+    let imgLink = "";
+
+    if (categoryName == "NeckTies") {
+
+        randIndex = Math.floor(Math.random() * necktieColorList.length);
+        color = necktieColorList[randIndex];
+        imgLink = necktieColorIMGList[randIndex];
+
+    } else if (categoryName == "Bow Ties") {
+
+        randIndex = Math.floor(Math.random() * bowTieColorList.length);
+        color = bowTieColorList[randIndex];
+        imgLink = bowTieColorIMGList[randIndex];
+
+    } else if (categoryName == "Tie Tacks") {
+
+        randIndex = Math.floor(Math.random() * tieTackColorList.length);
+        color = tieTackColorList[randIndex];
+        imgLink = tieTackIMGList[randIndex];
+
+    } else if (categoryName == "Cufflinks") {
+
+        randIndex = Math.floor(Math.random() * cufflinksColorList.length);
+        color = cufflinksColorList[randIndex];
+        imgLink = cufflinksIMGList[randIndex];
+
+    }
+
+    product.productName = `${color} ${categoryName} ${index}`;
+    product.category = category;
+    product.description = `This is a ${color} ${categoryName} ${index}`;
+    product.inventory = Math.floor(Math.random() * 100) + 1;
+    product.price = product.inventory = Math.floor(Math.random() * 100) + 1;
+    product.quantity = product.inventory = Math.floor(Math.random() * 100) + 1;
+    product.imageURL = imgLink;
+    product.category = category;
+
+    productList.push(product);
+
+}
+
+const setCategory = (key, value) => {
+
+    localStorage.setItem("searchStringArray", "");
+    localStorage.setItem("category", "");
+
+    localStorage.setItem(key, "");
+    localStorage.setItem(key, value);
+
+}
+
+const getCategory = () => {
+
+    return localStorage.getItem("category");
+
+}
+
+const getSearchStringArray = () => {
+
+    let searchString = localStorage.getItem("searchStringArray");
+    const searchCategoryArray = [];
+    // JSON.parse(searchString);
+
+    if (searchString != null && searchString != "") {
+        console.log("I'm in JSON");
+        console.log("Something JSON " + JSON.parse(searchString));
+        return JSON.parse(searchString);
+    }
+
+    return searchCategoryArray;
+
+}
+
+
+initProductList();
