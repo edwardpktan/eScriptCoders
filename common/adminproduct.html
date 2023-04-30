@@ -18,39 +18,53 @@
                <h3>Admin Product Form</h3>
                
                <label for="Category">Category</label>
-               <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option value="">Please Select</option>
+               <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id = "cate">
+                <!-- <option value="">Please Select</option>
                   <option value="neckties">Neck Ties</option>
                   <option value="bowties">Bow Ties</option>
-                  <option value="suspenders">Suspendeers</option>
-                  <option value="cufflinks">Cuff Links</option>
+                  <option value="Tie Clips">Tie Clips</option>
+                  <option value="cufflinks">Cuff Links</option> -->
               </select>
+
                <div class="form-group  mb-4">
-                   <label for="exampleInputEmail1">Product Name</label>
-                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
-                   <small id="emailHelp" class="form-text text-muted"></small>
-               </div>  
-               <label for="productimage">Product Image</label>
-               <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <label for="product" class="form-label">Product</label>
+                <input type="text" class="form-control" id="product" placeholder="Enter product name" required>
+                    <!-- <option value="">Please Select</option> -->
+
+                   <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
+                   <small id="emailHelp" class="form-text text-muted"></small> -->
+               </div> 
+              
+               <div>
+                <label for="productImage" class="form-label">Product Image</label>
+                <input type="file" class="form-control" id="productImage" required>
+                <!-- <option value="">Please Select</option> -->
+              </div>
     
-              </select>     
-              <label for="quantity">Quantity</label>
-               <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                
-              </select>    
+
+              <div class="form-group  mb-4">     
+              <!-- <label for="quantity">Quantity</label> -->
+               <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"> -->
+                <label for="quantity" class="form-label">Quantity</label>
+               <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" required>
+               </div>   
+
               <div class="form-group  mb-4">
                 <label for="exampleInputEmail1">Price</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
+                <input type="value" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
                 <small id="emailHelp" class="form-text text-muted"></small>
               </div> 
               <div class="form-group  mb-4">
-                <label for="exampleInputEmail1">Description</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
-                <small id="emailHelp" class="form-text text-muted"></small>
+                <label for="exampleInput">Description</label>
+                <input type="text" class="form-control" id="exampleInput" aria-describedby="Help" placeholder="" required>
+                <small id="Help" class="form-text text-muted"></small>
               </div> 
-                 <button class="btn btn-primary mb-4" type="submit">Save Item</button>
+                 <button class="btn btn-primary mb-4" type="submit" id = "savebutton" >Save Item</button>
            </form>
        </div>
+       <script src="js/main.js"></script> 
+
+       
 
        
 
