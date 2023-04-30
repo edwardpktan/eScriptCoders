@@ -227,12 +227,12 @@ const setQuery = () =>{
 
 }
 
-const getSearchStringArray = () =>{
-    let searchString = localStorage.getItem('searchStringArray');
-    const searchCategoryArray = JSON.parse(searchString);
-    //console.log(searchCategoryArray); 
+// const getSearchStringArray = () =>{
+//     let searchString = localStorage.getItem('searchStringArray');
+//     const searchCategoryArray = JSON.parse(searchString);
+//     //console.log(searchCategoryArray); 
     
-}
+// }
 
 
 //End Search----------------------------------------------------------------
