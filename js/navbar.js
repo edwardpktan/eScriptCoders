@@ -4,8 +4,23 @@
 const productList =[];
 
 
-const colorList = ["red","blue", "purple" , "black" , "green"]
+const necktieColorList = ["red","blue", "purple" , "black" , "green"]
+const necktieColorIMGList = ["images/redNeckTie.jpg","images/blueNeckTie.jpg", "images/purpleNeckTie.jpg" , "black" , "green"]
+
+const bowTieColorList = ["red","blue", "purple" , "black" , "green"]
+const bowTieColorIMGList = ["images/redNeckTie.jpg","images/blueNeckTie.jpg", "images/purpleNeckTie.jpg" , "black" , "green"]
+
+const tieClipsColorList = ["red","blue", "purple" , "black" , "green"]
+const tieClipsColorIMGList = ["images/redNeckTie.jpg","images/blueNeckTie.jpg", "images/purpleNeckTie.jpg" , "black" , "green"]
+
+const cuffLinksColorList = ["red","blue", "purple" , "black" , "green"]
+const cuffLinksColorIMGList = ["images/redNeckTie.jpg","images/blueNeckTie.jpg", "images/purpleNeckTie.jpg" , "black" , "green"]
+
+
 const categoryList = ["NeckTies", "Bow Ties" , "Tie Clips" , "CuffLinks"]
+const categoryIDList = ["neckTies_id", "bowTies_id" , "tieClips_id" , "cuffLinks_id"]
+
+
 
 const noOfProduct = 21;
 const noOfProductPerPage = 10;
@@ -15,7 +30,6 @@ const noOfProductPerPage = 10;
 const createProductHtml = ()=>{
 
     //div.innerHTML = ;
-
     let noOfPages =  Math.floor(productList.length/noOfProductPerPage);
     let lastPage = productList.length % noOfProductPerPage;
 
@@ -44,21 +58,51 @@ const initProductList = () =>{
 const createProduct = (index) => {
     let product = {};
 
-    let color = colorList[Math.floor(Math.random() * 4)];
-    let category = categoryList[Math.floor(Math.random() * 3)]; // change this if you need to hard code the category
+    let categoryIndex = Math.floor(Math.random() * 3);
+    let categoryName = categoryList[categoryIndex]; // change this if you need to hard code the category
+    let categoryID = categoryIDList[categoryIndex];
+    let category = {};
+    category.display = categoryName;
+    category.id = categoryID;
+    
+
+    let randIndex = 0;
+    let color = "";
+    let imgLink = ""; 
+
+    if(categoryName == "NeckTies"){
+        
+        randIndex = Math.floor(Math.random() * necktieColorList.length);
+        color = necktieColorList[randIndex];  
+          
+        imgLink = necktieColorIMGList[randIndex];
+    
+    }else if(categoryName == "Bow Ties"){
 
 
-    product.productname = `${color} ${category} ${index}`;
+
+    }
+    
+    
+    let imageURL = imgLink;
+
+    product.id = index;
+    product.productname = `${color} ${categoryName} Brand ${index}`;
 	product.category =  category;
-	product.description =  `This is a ${color} ${category} ${index}`;
+	product.description =  `This is a ${color} ${categoryName} ${index}`;
 	product.inventory = Math.floor(Math.random() * 100) +1;
 	product.price = product.inventory = Math.floor(Math.random() * 100) +1;
     product.quantity = product.inventory = Math.floor(Math.random() * 100) +1;
-    product.image = "image/tiered.jpg";
+    product.image = imageURL;
+    product.category = category;
+
     productList.push(product);
 }
 
 initProductList();
+
+console.log(productList[0].category.display);
+console.log(productList[0].category.id);
 */
 //End Product List----------------------------------------------------------------
 
@@ -103,24 +147,31 @@ const globalCategoryList =[];
 const createCategory = (index) =>{
         let category = {};
         category.display = `Neckties`;
-        category.id = `neckTies`;
+        category.id = `neckTies_id`;
         globalCategoryList.push(category);
 
 
         category = {};
         category.display = `Bow Ties`;
-        category.id = `bowTies`;
+        category.id = `bowTies_id`;
         globalCategoryList.push(category);
 
         category = {};
         category.display = `Tie Clips`;
-        category.id = `tieClips`;
+        category.id = `tieClips_id`;
         globalCategoryList.push(category);
 
         category = {};
         category.display = `Cufflinks`;
-        category.id = `cuffLinks`;
+        category.id = `cuffLinks_id`;
         globalCategoryList.push(category);
+
+      
+        category = {};
+        category.display = `Suspenders`;
+        category.id = `suspenders_id`;
+        globalCategoryList.push(category);
+
 
 }
 
@@ -134,23 +185,25 @@ const createNavbarHtml = ()=>{
         let id = globalCategoryList[i].id;
 
         mobileNavBarHtml += `<li class="mobileNavItems nav-item">
-              <a class="nav-link" aria-current="page" href="productListMain.html" onclick="setCategory('category','${display}')">${display}</a>
+              <a class="nav-link" aria-current="page" href="productListMain.html" onclick="setCategory('category','${id}')">${display}</a>
             </li>`
         
         mainNavBarHtml += `<li class="nav-item mx-4">
-            <a class="nav-link" aria-current="page" href="productListMain.html" onclick="setCategory('category','${display}')">${display}</a>
+            <a class="nav-link" aria-current="page" href="productListMain.html" onclick="setCategory('category','${id}')">${display}</a>
           </li>`;
     }
 
     document.querySelector(".mainNavbar>ul").innerHTML = mainNavBarHtml;
     document.querySelector(".mobileNavbar>ul").innerHTML = mobileNavBarHtml;
+    
+
 
 }
 
 const initGlobalCategoryList = () =>{
 
     createCategory(); //create global category list
-    console.log(globalCategoryList);
+    //console.log(globalCategoryList);
     createNavbarHtml(); //create Navbar links
 }
 
@@ -165,7 +218,14 @@ const createPatternString = () =>{
     for(let i=0; i< globalCategoryList.length;i++){
         let category = globalCategoryList[i].display;
         let categoryWithoutS = category.slice(0,-1);
-        pattern += `${category}|${categoryWithoutS}|`;
+        let categoryWithoutSWithoutSpace = categoryWithoutS.replace(" ", "");
+        let categoryWithoutSpace = category.replace(" ", "");
+        let categoryWithSpaceLink = categoryWithoutS.replace("link", " link");
+        let categoryWithSpaceLinks = category.replace("links", " links");
+        let categoryWithSpaceTie = categoryWithoutS.replace("tie", " tie");
+        let categoryWithSpaceTies = category.replace("ties", " ties");
+        pattern += `${category}|${categoryWithoutS}|${categoryWithoutSWithoutSpace}|${categoryWithoutSpace}|${categoryWithSpaceLink}|${categoryWithSpaceLinks}|${categoryWithSpaceTie}|${categoryWithSpaceTies}|`;
+        
     }
     pattern = pattern.slice(0,-1);
     return pattern;
@@ -178,7 +238,7 @@ const getRegExpResult = (query, pattern) =>{
     return result;
 
 }
-
+/*
 const setCategory = (key , value) => {
     
     localStorage.setItem("searchStringArray", "");
@@ -191,33 +251,69 @@ const setCategory = (key , value) => {
     //console.log("localStorage.getItem : " + localStorage.getItem(key));
 }
 
+
+const getCategory = () => {
+    return localStorage.getItem("category");
+    //console.log("I am here");
+}
+
+// const getSearchStringArray = () =>{
+//     let searchString = localStorage.getItem('searchStringArray');
+//     const searchCategoryArray = JSON.parse(searchString);
+//     //console.log(searchCategoryArray); 
+    
+// }
+*/
+
 const replaceWithIDFromGlobalCatList = (result) =>{
     result.forEach((element, index) => {
+        console.log(`element : ${element}`);
+        
+
         globalCategoryList.forEach((category) => {
           let catDisplay = category.display.toUpperCase();
-          if (element.toUpperCase() == catDisplay || (element + "s").toUpperCase() == catDisplay){
+          console.log(`catDisplay : ${catDisplay}`);
+          
+          console.log(catDisplay.replace(" ", ""));
+          
+
+          if (element.toUpperCase() == catDisplay || (element + "s").toUpperCase() == catDisplay || (element+"s").toUpperCase() == catDisplay.replace(" ", "")|| element.toUpperCase() == catDisplay.replace(" ", "")+"S"||(element + "s").toUpperCase().replace(" ", "") == catDisplay){
            // console.log("match " + category.id);
             result[index] = category.id;
+            //result[index] = category.display;
           }
         });
     });
 
 
 }
+
+const navigateToProductPage = () =>{
+
+    location.href = "productListMain.html";
+}
+
+
+
 const setQuery = () =>{
 
     let query = document.querySelector("#searchInput").value;
-    //console.log(query);
+//    console.log(query);
     if(query != ""){
         let pattern = createPatternString();
+
+        console.log(`pattern : ${pattern}`);
         let result = getRegExpResult(query,pattern);
         if(result != null){
-            //replaceWithIDFromGlobalCatList(result);
-            console.log(result);
-
+            
+//            console.log(result);
+            replaceWithIDFromGlobalCatList(result);
+//            console.log(result);
 
             let resultStr = JSON.stringify(result);
             setCategory('searchStringArray', resultStr);
+            navigateToProductPage();
+
         }else{
             alert ("Can't find the category");
         }
@@ -227,12 +323,7 @@ const setQuery = () =>{
 
 }
 
-const getSearchStringArray = () =>{
-    let searchString = localStorage.getItem('searchStringArray');
-    const searchCategoryArray = JSON.parse(searchString);
-    //console.log(searchCategoryArray); 
-    
-}
+
 
 
 //End Search----------------------------------------------------------------
