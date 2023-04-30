@@ -18,7 +18,7 @@
 <section>
     <div class = "login">
         <h1 class="text-center">Log In</h1>
-        <form class="needs-validation">
+        <form class="needs-validation" onsubmit="return false;">
             <div class="form-group was validated">
                 <label class="form-label" for="user name">EMail </label>
                 <input class="form-control" type="user name" id="user name" required>
@@ -31,7 +31,7 @@
             <div class="form-group was validated">  
                 <label class="form-label" for="exampleInputPassword1">Enter Password </label> 
                 <input class="form-control" type="password" class="form-control form-control-sm" id="exampleInputPassword1" required>       
-                <a href="#" style="float:right;font-size:12px;"> Forgot password? </a> 
+                <a href="#" style="float:right;font-size:12px;" onclick="forgotpassword()"> Forgot password? </a> 
                 <!-- <div class="Invalid-feedback">
                     Please enter your password
                 </div>  -->
@@ -41,8 +41,11 @@
                 <input class="form-check-input" type="checkbox" id="check">
                                
             </div>
-            <input  class="btn btn-success w-100" type="submit" value="SIGN IN">
+            
+            <input  class="btn btn-success w-100" type="submit" value="SIGN IN" onclick = "validate();">
         </form>
+
+        <script src="js/login.js"></script>
 
     </div>
 </section>
