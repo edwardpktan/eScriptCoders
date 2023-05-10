@@ -157,21 +157,22 @@ const createCategory = (index) =>{
         globalCategoryList.push(category);
 
         category = {};
-        category.display = `Tie Clips`;
-        category.id = `tieClips_id`;
+        //category.display = `Tie Clips`;
+        category.display = `Tie Tacks`;
+        category.id = `tieTacks_id`;
         globalCategoryList.push(category);
 
         category = {};
         category.display = `Cufflinks`;
-        category.id = `cuffLinks_id`;
+        category.id = `cufflinks_id`;
         globalCategoryList.push(category);
 
-      
+/*      
         category = {};
         category.display = `Suspenders`;
         category.id = `suspenders_id`;
         globalCategoryList.push(category);
-
+*/
 
 }
 
