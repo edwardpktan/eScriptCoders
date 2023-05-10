@@ -85,21 +85,25 @@ const filterProductSearchString = (searchStringArray) => {
 const initProductList = () => {
 
     // setCategory("category", "bowTies_id");
-    let stringArray = ["bowTies_id", "neckTies_id"];
-    let stringA = JSON.stringify(stringArray);
+    // let stringArray = ["bowTies_id", "neckTies_id"];
+    // let stringA = JSON.stringify(stringArray);
 
-    setCategory("searchStringArray", stringA);
+    // setCategory("searchStringArray", stringA);
 
     for (let i = 0; i < noOfProduct; i++) {
 
         createProduct(i);
     }
-    console.log("get search" + getSearchStringArray());
+    
+    let searchStringArray = getSearchStringArray();
+    let categoryString = getCategory();
 
-    if (getSearchStringArray() != null && getSearchStringArray() != "") {
-        createProductHtml(filterProductSearchString(getSearchStringArray()));
-    } else if (getCategory() != null && getCategory() != "") {
-        createProductHtml(filterProduct(getCategory()));
+    if (searchStringArray != null && searchStringArray != "") {
+        console.log("get search: " + searchStringArray);
+
+        createProductHtml(filterProductSearchString(searchStringArray));
+    } else if (categoryString != null && categoryString != "") {
+        createProductHtml(filterProduct(categoryString));
     } else {
         createProductHtml(productList);
         console.log("I'm hereee");
