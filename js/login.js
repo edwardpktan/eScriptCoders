@@ -24,8 +24,8 @@ function validate() {
     },
   ];
 
-  const email = document.getElementById("user name").value;
-  const password = document.getElementById("exampleInputPassword1").value;
+  const email = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
   let value1 = Account.some((item) => {
     return item.Email == email;
     
@@ -51,8 +51,8 @@ function validate() {
     attempt--;
     alert("Invalid Data ,you have left " + attempt + " attempt");
     if (attempt == 0) {
-      document.getElementById("user name").disabled = true;
-      document.getElementById("exampleInputPassword1").disabled = true;
+      document.getElementById("username").disabled = true;
+      document.getElementById("password").disabled = true;
       document.getElementById("submit").disabled = true;
     }
     return false;
