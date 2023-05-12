@@ -1,26 +1,23 @@
-* {
-    box-sizing: border-box;
-    /* border: 1px solid red; */
-}
 
-.card {
+#productCard {
+    border: none;;
     margin: 10px auto;
 }
 
-.card a:link {
+#productCard a:link {
     text-decoration: none;
     color: #000;
 }
 
-.card a:visited {
+#productCard a:visited {
     color: #000;
 }
 
-.card a:hover {
+#productCard a:hover {
     opacity: 0.8;
 }
 
-.card p {
+#productCard p {
     font-size: 14px;
     margin: 10px 0px;
     text-align: left;

@@ -166,4 +166,11 @@ const setModalPrivacy = () => {
 
 }
 
-
+function displayDetails(index) {
+    //When user clicks on any "More" button, the details of the selected product will be displayed
+    console.log("Index:" + index);
+    document.querySelector("#modalName").innerHTML = filteredProductList[index].productName;
+    document.querySelector("#modalDescription").innerHTML = filteredProductList[index].description;
+    document.querySelector("#modalPrice").innerHTML = filteredProductList[index].price;
+    document.querySelector("#modalImg").src = filteredProductList[index].imageURL;
+}
