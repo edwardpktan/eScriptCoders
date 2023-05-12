@@ -12,15 +12,15 @@
 <body>
     <!-- Modal -->
     <div class="modal fade" id="othersModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" >
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" >
+                <div class="modal-body">
 
-                    
+
 
 
 
@@ -28,6 +28,34 @@
                 <div class="modal-footer justify-content-start">
                     <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
                     <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pop up for each product details -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p id="modalName">Sample Product Name</p>
+                </div>
+                <div class="modal-body" id="productModalBody">
+                    <img id="modalImg" src="" width=80% />
+
+                    <hr>
+                    <b>Description:</b> <span id="modalDescription">Sample Product Description</span> <br />
+                    <b>Price:</b> <span id="modalPrice">69</span>
+                    <form action="add-to-cart.php" method="post">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" id="quantity" value="1" min="1" max="10">
+                        <button type="submit">Add to Cart</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" data-bs-dismiss="modal">Close</a>
                 </div>
             </div>
         </div>
