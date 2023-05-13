@@ -200,7 +200,7 @@ const displayProductList = (pageStart, pageEnd) => {
                 }
 
             }
-            let breadcrumbString = `<li class="breadcrumb-item"><a href="#">Home</a></li>
+            let breadcrumbString = `<li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">${searchString}</li>`;
 
             document.querySelector("#breadcrumb").innerHTML = breadcrumbString;
@@ -226,7 +226,7 @@ const displayProductList = (pageStart, pageEnd) => {
 
 
 
-            let breadcrumbString = `<li class="breadcrumb-item"><a href="#">Home</a></li>
+            let breadcrumbString = `<li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">${catDisplay}</li>`;
 
             document.querySelector("#breadcrumb").innerHTML = breadcrumbString;
@@ -237,7 +237,7 @@ const displayProductList = (pageStart, pageEnd) => {
             let resultArray = productList.slice(pageStart, pageEnd);
             createProductHtml(resultArray, pageStart);
 
-            let breadcrumbString = `<li class="breadcrumb-item"><a href="#">Home</a></li>
+            let breadcrumbString = `<li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">ALL</li>`;
 
             document.querySelector("#breadcrumb").innerHTML = breadcrumbString;
@@ -360,6 +360,8 @@ const getSearchStringArray = () => {
 
 initProductList();
 
+// Edward Start
+
 /*
 // Product Controller
 
@@ -471,7 +473,7 @@ function addProduct(productName, description, imageURL, inventory, quantity, pri
 }
 
 */
-
+// Edward End
 
 
 
